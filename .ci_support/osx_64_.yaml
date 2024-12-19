@@ -13,15 +13,7 @@ c_stdlib_version:
 channel_sources:
 - conda-forge
 channel_targets:
-- conda-forge main
-coin_or_cgl:
-- '0.60'
-coin_or_clp:
-- '1.17'
-coin_or_osi:
-- '0.108'
-coin_or_utils:
-- '2.11'
+- royerlab main
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
@@ -33,3 +25,5 @@ target_platform:
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
+numpy:
+- '2.0'

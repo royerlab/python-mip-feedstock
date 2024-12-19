@@ -1,137 +1,69 @@
-About coin-or-cbc-feedstock
+About python-mip-feedstock
 ===========================
 
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/coin-or-cbc-feedstock/blob/main/LICENSE.txt)
+Feedstock license: [BSD-3-Clause](https://github.com/royerlab/python-mip-feedstock/blob/main/LICENSE.txt)
 
-Home: https://projects.coin-or.org/Cbc
+Home: https://python-mip.com
 
 Package license: EPL-2.0
 
-Summary: COIN-OR branch and cut (Cbc)
+Summary: python-mip
 
-Development: https://github.com/coin-or/Cbc
-
-Cbc (Coin-or branch and cut) is an open-source mixed integer linear
-programming solver written in C++. It can be used as a callable library or
-using a stand-alone executable. It can be called through AIMMS (through the
-AIMMSlinks project), AMPL (natively), CMPL, GAMS (through the GAMSlinks
-project), JuMP, Mathematica, MiniZinc, MPL (through the CoinMP project), PuLP,
-Python (e.g., cbcpy), and OpenSolver for Excel, among others.
-
-
-Current build status
-====================
-
-
-<table>
-    
-  <tr>
-    <td>Azure</td>
-    <td>
-      <details>
-        <summary>
-          <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10719&branchName=main">
-            <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/coin-or-cbc-feedstock?branchName=main">
-          </a>
-        </summary>
-        <table>
-          <thead><tr><th>Variant</th><th>Status</th></tr></thead>
-          <tbody><tr>
-              <td>linux_64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10719&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/coin-or-cbc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_aarch64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10719&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/coin-or-cbc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_aarch64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_ppc64le</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10719&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/coin-or-cbc-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_ppc64le_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10719&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/coin-or-cbc-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_arm64</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=10719&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/coin-or-cbc-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_" alt="variant">
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </details>
-    </td>
-  </tr>
-</table>
+Development: https://github.com/coin-or/python-mip
 
 Current release info
 ====================
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-coin--or--cbc-green.svg)](https://anaconda.org/conda-forge/coin-or-cbc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/coin-or-cbc.svg)](https://anaconda.org/conda-forge/coin-or-cbc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/coin-or-cbc.svg)](https://anaconda.org/conda-forge/coin-or-cbc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/coin-or-cbc.svg)](https://anaconda.org/conda-forge/coin-or-cbc) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-coin--or--cbc-green.svg)](https://anaconda.org/royerlab/python-mip) | [![Conda Downloads](https://img.shields.io/conda/dn/royerlab/python-mip.svg)](https://anaconda.org/royerlab/python-mip) | [![Conda Version](https://img.shields.io/conda/vn/royerlab/python-mip.svg)](https://anaconda.org/royerlab/python-mip) | [![Conda Platforms](https://img.shields.io/conda/pn/royerlab/python-mip.svg)](https://anaconda.org/royerlab/python-mip) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-coincbc-green.svg)](https://anaconda.org/conda-forge/coincbc) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/coincbc.svg)](https://anaconda.org/conda-forge/coincbc) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/coincbc.svg)](https://anaconda.org/conda-forge/coincbc) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/coincbc.svg)](https://anaconda.org/conda-forge/coincbc) |
 
-Installing coin-or-cbc
+Installing python-mip
 ======================
 
-Installing `coin-or-cbc` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `python-mip` from the `royerlab` channel can be achieved by adding `royerlab` to your channels with:
 
 ```
-conda config --add channels conda-forge
+conda config --add channels royerlab
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `coin-or-cbc, coincbc` can be installed with `conda`:
+Once the `royerlab` channel has been enabled, `python-mip` can be installed with `conda`:
 
 ```
-conda install coin-or-cbc coincbc
-```
-
-or with `mamba`:
-
-```
-mamba install coin-or-cbc coincbc
-```
-
-It is possible to list all of the versions of `coin-or-cbc` available on your platform with `conda`:
-
-```
-conda search coin-or-cbc --channel conda-forge
+conda install python-mip coincbc
 ```
 
 or with `mamba`:
 
 ```
-mamba search coin-or-cbc --channel conda-forge
+mamba install python-mip coincbc
+```
+
+It is possible to list all of the versions of `python-mip` available on your platform with `conda`:
+
+```
+conda search python-mip --channel royerlab
+```
+
+or with `mamba`:
+
+```
+mamba search python-mip --channel royerlab
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search coin-or-cbc --channel conda-forge
+mamba repoquery search python-mip --channel royerlab
 
-# List packages depending on `coin-or-cbc`:
-mamba repoquery whoneeds coin-or-cbc --channel conda-forge
+# List packages depending on `python-mip`:
+mamba repoquery whoneeds python-mip --channel royerlab
 
-# List dependencies of `coin-or-cbc`:
-mamba repoquery depends coin-or-cbc --channel conda-forge
+# List dependencies of `python-mip`:
+mamba repoquery depends python-mip --channel royerlab
 ```
 
 
@@ -176,17 +108,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating coin-or-cbc-feedstock
+Updating python-mip-feedstock
 ==============================
 
-If you would like to improve the coin-or-cbc recipe or build a new
+If you would like to improve the python-mip recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
-`conda-forge` channel, whereupon the built conda packages will be available for
-everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/coin-or-cbc-feedstock are
+`royerlab` channel, whereupon the built conda packages will be available for
+everybody to install and use from the `royerlab` channel.
+Note that all branches in the royerlab/python-mip-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
@@ -201,7 +133,4 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@h-vetinari](https://github.com/h-vetinari/)
-* [@tkralphs](https://github.com/tkralphs/)
-* [@wolfv](https://github.com/wolfv/)
-
+* [@jookuma](https://github.com/jookuma/)

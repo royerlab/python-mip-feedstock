@@ -15,15 +15,7 @@ cdt_name:
 channel_sources:
 - conda-forge
 channel_targets:
-- conda-forge main
-coin_or_cgl:
-- '0.60'
-coin_or_clp:
-- '1.17'
-coin_or_osi:
-- '0.108'
-coin_or_utils:
-- '2.11'
+- royerlab main
 cxx_compiler:
 - gxx
 cxx_compiler_version:
@@ -37,3 +29,5 @@ zip_keys:
   - cxx_compiler_version
 - - c_stdlib_version
   - cdt_name
+numpy:
+- '2.0'
