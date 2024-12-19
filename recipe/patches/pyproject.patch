@@ -1,0 +1,11 @@
+--- pyproject.toml	2024-12-19 22:14:01.637300093 +0000
++++ pyproject.new.toml	2024-12-19 22:13:55.645311638 +0000
+@@ -56,7 +56,7 @@
+ packages = ["mip"]
+ 
+ [tool.setuptools.package-data]
+-"mip.libraries" = ["*.so", "*.dylib", "*.dll"]
++mip = ["*.so", "*.dylib", "*.dll", "libraries/*.lib"]
+ 
+ [tool.setuptools_scm]
+ write_to = "mip/_version.py"
