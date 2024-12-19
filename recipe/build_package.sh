@@ -1,30 +1,54 @@
 #!/usr/bin/env bash
-# Get an updated config.sub and config.guess
+set -e  # Exit immediately if a command exits with a non-zero status
+set -u  # Treat unset variables as an error
 
-MIPLIBDIR=mip/libraries
-BINNAME=libcbc.lib
+# Variables
+MIPLIBDIR="mip/libraries"
+BINNAME="libcbc.lib"
+COINDIR="coinlibs"
+COINBREW_URL="https://raw.githubusercontent.com/coin-or/coinbrew/master/coinbrew"
 
-echo "python mip libraries directory: $MIPLIBDIR"
-echo "cbc library file: $BINNAME"
+echo "Python MIP libraries directory: $MIPLIBDIR"
+echo "CBC library binary name: $BINNAME"
+
+# Clean existing libraries
 rm -rf $MIPLIBDIR/*
+mkdir -p $MIPLIBDIR
 
-COINDIR=coinlibs
-
-mkdir $COINDIR
+# Create and navigate to coinlibs directory
+mkdir -p $COINDIR
 cd $COINDIR
-wget https://raw.githubusercontent.com/coin-or/coinbrew/master/coinbrew
-chmod u+x coinbrew
-./coinbrew build --static Cbc@master
-echo "cbc build done"
+
+# Download coinbrew if it doesn't exist
+if [[ ! -f coinbrew ]]; then
+    wget $COINBREW_URL -O coinbrew
+    chmod u+x coinbrew
+fi
+
+# Build CBC with coinbrew
+./coinbrew build --static Cbc@master --prefix=dist
+echo "CBC build completed successfully."
+
 cd ..
 
-$CXX -shared -Ofast -fPIC -o $MIPLIBDIR/$BINNAME \
- -I${COINDIR}/dist/include/coin-or/ \
- -DCBC_THREAD \
-  $COINDIR/Cbc/src/Cbc_C_Interface.cpp \
- -L/opt/gcc/lib64/ -L$COINDIR/dist/lib/ \
- -lCbc -lCgl -lClp -lCoinUtils -lOsi -lOsiCbc -lOsiClp \
- -lreadline -lbz2 -lz \
- -lgfortran -lquadmath -lm -static-libgcc -static-libstdc++ -static-libgfortran 
+# Ensure CXX is defined
+if [[ -z "${CXX:-}" ]]; then
+    echo "CXX is not set. Defaulting to g++."
+    CXX=g++
+fi
 
+# Compile the shared library
+$CXX -shared -Ofast -fPIC -o $MIPLIBDIR/$BINNAME \
+    -I${COINDIR}/dist/include/coin-or/ \
+    -DCBC_THREAD \
+    $COINDIR/Cbc/src/Cbc_C_Interface.cpp \
+    -L${COINDIR}/dist/lib/ \
+    -lCbc -lCgl -lClp -lCoinUtils -lOsi -lOsiCbc -lOsiClp \
+    -lreadline -lbz2 -lz \
+    -lgfortran -lquadmath -lm -lstdc++ \
+    -static-libgcc -static-libstdc++ -static-libgfortran
+
+echo "Shared library compiled successfully."
+
+# Install the Python package
 pip install . -vv
