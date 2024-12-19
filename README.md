@@ -1,7 +1,7 @@
 About python-mip-feedstock
 ===========================
 
-ARCHIVED see [mip-feedstock](https://github.com/royerlab/python-mip-feedstock)
+## ARCHIVED see [mip-feedstock](https://github.com/royerlab/mip-feedstock)
 
 Feedstock license: [BSD-3-Clause](https://github.com/royerlab/python-mip-feedstock/blob/main/LICENSE.txt)
 
